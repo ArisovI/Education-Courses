@@ -1,0 +1,291 @@
+@media (min-width: 768px){
+    .footer {
+        background-color: $footerColor;
+        padding: 50px 10px 0 10px;
+    
+        .footer-main {
+            @include flex(column, center, center);
+    
+            .footer-main__item {
+                @include flex(column, center, center);
+    
+                .title {
+                    border-bottom: 2px solid $orangeColor;
+                    padding: 0 0 15px 0;
+                    margin: 20px 0;
+    
+                    h2 {
+                        @include font-family('roboto', 26px, $whiteColor, uppercase, bold);
+                    }
+                }
+    
+                .text {
+                    margin: 20px 0;
+    
+                    p {
+                        @include font-family('open sans', 15px, $whiteColor, none);
+                        line-height: 24px;
+                    }
+                }
+    
+                .social {
+                    margin: 0 0 20px 0;
+    
+                    @include wh(100%, 100%);
+                    @include flex(row, space-between, center);
+    
+                    a {
+                        border: 1px solid $whiteColor;
+                        padding: 8px;
+                        @include flex(row, center, center);
+                        border-radius: 5px;
+    
+                        span {
+                            font-size: 25px;
+                            color: $whiteColor;
+                        }
+    
+                        &:hover {
+                            background-color: $orangeColor;
+                            border: 1px solid $orangeColor;
+                        }
+                    }
+                }
+    
+                .times {
+                    margin: 30px 0 20px 0;
+    
+                    .times__week {
+                        @include wh(100%, 100%);
+                        @include flex(column, center, center);
+    
+                        .week {
+                            @include wh(720px, 100%);
+                            @include flex(row, space-between, space-between);
+                            border-bottom: 1px solid #6e7174;
+                            @include font-family('open sans', 15px, $whiteColor, none);
+                            padding: 0 0 10px 0;
+                        }
+                    }
+                }
+    
+                .name {
+                    margin: 50px 0 0 0;
+    
+                    input[type=text] {
+                        @include wh(700px, 40px);
+                        border-radius: 5px;
+                        outline: none;
+                        padding: 10px;
+                        background-color: transparent;
+                        border: 1px solid $whiteColor;
+    
+                        &::placeholder {
+                            @include font-family('open sans', 15px, $whiteColor, none);
+                        }
+                    }
+                }
+    
+                .phone {
+                    margin: 10px 0;
+    
+                    input[type=number] {
+                        @include wh(700px, 40px);
+                        border-radius: 5px;
+                        outline: none;
+                        padding: 10px;
+                        background-color: transparent;
+                        border: 1px solid $whiteColor;
+    
+                        &::placeholder {
+                            @include font-family('open sans', 15px, $whiteColor, none);
+                        }
+                    }
+                }
+    
+                .messages {
+                    input[type=text] {
+                        @include wh(700px, 80px);
+                        border-radius: 5px;
+                        outline: none;
+                        padding: 10px;
+                        background-color: transparent;
+                        border: 1px solid $whiteColor;
+    
+                        &::placeholder {
+                            @include font-family('open sans', 15px, $whiteColor, none);
+                        }
+                    }
+                }
+    
+                .btn {
+                    @include flex(row, flex-start, flex-start);
+                    @include wh(100%, 100%);
+                    margin: 10px 0;
+    
+                    input[type=submit] {
+                        @include wh(200px, 38px);
+                        border-radius: 5px;
+                        cursor: pointer;
+                        background-color: $orangeColor;
+                        color: $whiteColor;
+                        border: none;
+                    @include font-family('open sans', 19px, $whiteColor, none);
+
+                    }
+                }
+    
+            }
+        }
+    }
+}
+@media (min-width: 992px){
+    .footer {
+        background-color: $footerColor;
+        padding: 50px 10px 0 10px;
+    
+        .footer-main {
+            @include flex(row, center, center);
+    
+            .footer-main__item {
+                @include flex(column, center, center);
+                @include wh(100%, 100%);
+                margin: 0 10px;
+                padding: 20px 0;
+                .title {
+                    border-bottom: 2px solid $orangeColor;
+                    padding: 0 0 15px 0;
+                    margin: 0;
+    
+                    h2 {
+                        @include font-family('roboto', 28px, $whiteColor, uppercase, bold);
+                    }
+                }
+    
+                .text {
+                    margin: 15px 0 0 0;
+    
+                    p {
+                        @include font-family('open sans', 15px, $whiteColor, none);
+                        line-height: 23px;
+                    }
+                }
+    
+                .social {
+                    margin: 20px 10px;
+    
+                    @include wh(100%, 100%);
+                    @include flex(row, space-between, center);
+    
+                    a {
+                        border: 1px solid $whiteColor;
+                        padding: 8px;
+                        @include flex(row, center, center);
+                        border-radius: 5px;
+    
+                        span {
+                            font-size: 25px;
+                            color: $whiteColor;
+                        }
+    
+                        &:hover {
+                            background-color: $orangeColor;
+                            border: 1px solid $orangeColor;
+                        }
+                    }
+                }
+    
+                .times {
+                    margin: 15px 0 0 0;
+    
+                    .times__week {
+                        @include wh(100%, 100%);
+                        @include flex(column, center, center);
+    
+                        .week {
+                            @include wh(300px, 100%);
+                            @include flex(row, space-between, space-between);
+                            border-bottom: 1px solid #6e7174;
+                            @include font-family('open sans', 17px, $whiteColor, none);
+                            padding: 0 0 15px 0;
+                        }
+                    }
+                }
+    
+                .name {
+                    margin: 50px 0 0 0;
+                    @include flex(row, flex-start, flex-start);
+                    @include wh(100%, 100%);
+                    input[type=text] {
+                        @include wh(100%, 100%);
+
+                        border-radius: 5px;
+                        outline: none;
+                        padding: 10px;
+                        background-color: transparent;
+                        border: 1px solid $whiteColor;
+    
+                        &::placeholder {
+                            @include font-family('open sans', 15px, $whiteColor, none);
+                        }
+                    }
+                }
+    
+                .phone {
+                    margin: 10px 0;
+                    @include flex(row, flex-start, flex-start);
+                    @include wh(100%, 100%);
+                    input[type=number] {
+                        @include wh(100%, 100%);
+
+                        border-radius: 5px;
+                        outline: none;
+                        padding: 10px;
+                        background-color: transparent;
+                        border: 1px solid $whiteColor;
+    
+                        &::placeholder {
+                            @include font-family('open sans', 15px, $whiteColor, none);
+                        }
+                    }
+                }
+    
+                .messages {
+                    @include flex(row, flex-start, flex-start);
+                    @include wh(100%, 100%);
+
+                    input[type=text] {
+                        @include wh(100%, 70px);
+                        border-radius: 5px;
+                        outline: none;
+                        padding: 10px;
+                        background-color: transparent;
+                        border: 1px solid $whiteColor;
+    
+                        &::placeholder {
+                            @include font-family('open sans', 15px, $whiteColor, none);
+                        }
+                    }
+                }
+    
+                .btn {
+                    @include flex(row, flex-start, flex-start);
+                    @include wh(100%, 100%);
+                    margin: 10px 0;
+    
+                    input[type=submit] {
+                        @include wh(100px, 38px);
+                        border-radius: 5px;
+                        cursor: pointer;
+                        background-color: $orangeColor;
+                        color: $whiteColor;
+                        border: none;
+                    @include font-family('open sans', 19px, $whiteColor, none);
+
+                    }
+                }
+    
+            }
+        }
+    }
+}

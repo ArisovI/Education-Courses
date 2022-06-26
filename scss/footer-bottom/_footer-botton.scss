@@ -1,0 +1,13 @@
+.footer-bottom{
+    background-color: $blackColor;
+    .container{
+        @include wh(100%, 100px);
+        @include flex(row,center,center);
+        a{
+            @include font-family('Open Sans', 16px, $whiteColor, none);
+        }
+        a:nth-child(2){
+            color: $orangeColor;
+        }
+    }
+}

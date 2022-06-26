@@ -1,0 +1,242 @@
+.header-top {
+    background-color: $blueColor;
+
+    .container {
+        .header-main {
+            @include flex(row, space-between, center);
+
+            .header-top__left,
+            .header-top__right {
+                padding: 15px 0;
+                @include flex(row, center, center);
+
+                a {
+                    @include font-family('Open Sans', 14px, $whiteColor, none, Lighter);
+                    margin: 0 15px;
+
+                    span {
+                        margin: 0 5px;
+                    }
+
+                    &:hover {
+                        color: $orangeColor;
+                    }
+
+                }
+
+                .login {
+                    .login-btn {
+                        display: none;
+                    }
+
+                    .login-lbl {
+                        @include font-family('Open Sans', 14px, $whiteColor, none, Lighter);
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $orangeColor;
+                        }
+                    }
+
+                    .login-btn:checked~.login-top {
+                        top: 0%;
+                    }
+
+                    .login-top {
+                        background: rgba(0, 0, 0, 0.829);
+                        @include wh(100vw, 100vh);
+                        @include pos-left(-100%, 0%);
+                        @include flex(row, center, center);
+                        transition: 1s;
+
+                        .login-top__inside {
+                            @include flex(column, space-evenly, center);
+                            background-color: $whiteColor;
+                            @include wh(40%, 40%);
+                            border-radius: 10px;
+                            padding: 10px;
+                            position: relative;
+
+                            .label-btn {
+                                @include pos-right(5%, 5%);
+                                cursor: pointer;
+                            }
+
+                            h2 {
+                                @include font-family('Roboto', 35px, $blackColor, none, bold);
+                            }
+
+                            .login-inside__btn {
+                                @include flex(column, space-around, flex-start);
+                                border: 1px solid grey;
+                                border-radius: 10px;
+                                @include wh(90%, 50%);
+                                padding: 10px;
+
+                                .log,
+                                .pass {
+                                    @include flex(row, space-between, center);
+                                    margin: 5px 0;
+
+                                    input {
+                                        outline: none;
+                                        border: 1px solid grey;
+                                        padding: 2px 10px;
+                                        border-radius: 5px;
+
+
+                                        &::placeholder {
+                                            @include font-family('Open Sans', 16px, $grayColor, none);
+
+                                        }
+                                    }
+
+                                    span {
+                                        @include font-family('Open Sans', 16px, $blackColor, none);
+
+                                    }
+                                }
+
+                                .keep {
+                                    margin: 5px 0;
+
+                                    input:checked~label {
+                                        color: $orangeColor;
+                                    }
+
+                                    label {
+                                        cursor: pointer;
+                                        @include font-family('Open Sans', 16px, $blackColor, none);
+
+                                        &:hover {
+                                            color: $orangeColor
+                                        }
+                                    }
+                                }
+
+                                .sing {
+                                    @include flex(column, space-evenly, center);
+                                    @include wh(100%, 100%);
+
+                                    input {
+                                        @include wh(100%, 100%);
+                                        cursor: pointer;
+                                        margin: 3px 0;
+                                    }
+
+                                    a {
+                                        @include font-family('Open Sans', 14px, $blackColor, none);
+
+                                        &:hover {
+                                            color: $orangeColor;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header-bottom {
+    .container {
+        .header-main {
+            @include flex(row, space-between, center);
+            padding: 15px 0;
+
+            .header-bottom__menu {
+                @include flex(row, center, center);
+
+                .menu {
+                    .input-btn {
+                        display: none;
+                    }
+
+                    ul {
+                        @include flex(row, center, center);
+
+                        li {
+                            margin: 15px;
+                            position: relative;
+
+                           span{
+                            a {
+                                @include font-family('Open Sans', 14px, $blackColor, uppercase, bold);
+
+                                &:hover {
+                                    color: $orangeColor;
+                                }
+                            }
+                           }
+                            &:hover span::after {
+                                opacity: 1;
+                            }
+
+                            &:hover span::before {
+                                opacity: 1;
+                            }
+
+                            span::after {
+                                content: '';
+                                @include wh(4px, 14px);
+                                @include pos-right(6px, -12px);
+                                background: $orangeColor;
+                                opacity: 0;
+                                transition: 0.5s;
+                            }
+
+                            span::before {
+                                content: '';
+                                @include wh(4px, 14px);
+                                @include pos-left(6px, -12px);
+                                background: $orangeColor;
+                                opacity: 0;
+                                transition: 0.5s;
+                            }
+                        }
+                    }
+                }
+
+                .search {
+                    margin: 5px 0 0 6px;
+                    position: relative;
+
+                    .checkbox__btn {
+                        @include wh(20px, 20px);
+                        @include pos-right(auto, 0);
+                        opacity: 0;
+                        cursor: pointer;
+                    }
+
+                    .checkbox__btn:checked~.search__btn {
+                        @include wh(630px, auto);
+                        opacity: 1;
+                        padding-left: 8px;
+                    }
+
+                    .search__btn {
+                        @include wh(0px, auto);
+                        @include pos-right(-3px, 22px);
+                        transition: 1s;
+                        opacity: 0;
+                        outline: none;
+                    }
+                }
+            }
+
+            .header-bottom__logo {
+                a {
+                    @include font-family('Roboto', 30px, $blackColor, none, Lighter);
+                    line-height: 32px;
+
+                    &:hover {
+                        color: $orangeColor;
+                    }
+                }
+            }
+        }
+    }
+}

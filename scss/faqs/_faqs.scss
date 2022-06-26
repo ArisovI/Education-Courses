@@ -1,0 +1,202 @@
+.faqs {
+    padding: 50px 10px 0px 10px;
+    @include wh(100%, 100%);
+
+    .faqs-caption {
+        @include font-family('Roboto Slab', 30px, $grayColor, uppercase, bold);
+        text-align: center;
+        padding: 25px;
+    }
+
+
+    .faqs-content {
+        .faqs-vkladka {
+            @include flex(column, none, none);
+
+            .caption {
+                @include font-family('Roboto', 20px, $grayColor, none, medium);
+                line-height: 32px
+            }
+
+            .faqs-vkladka__item {
+                @include wh(100%, 100%);
+                background-color: $faqsColor;
+                border: 1px solid $whiteColor;
+                padding: 15px 0;
+
+                &:hover {
+                    background-color: $orangeColor;
+                }
+
+                &:hover label {
+                    background-color: $orangeColor;
+                }
+
+                #tab1:checked~.title,
+                #tab2:checked~.title,
+                #tab3:checked~.title,
+                #tab4:checked~.title,
+                #tab5:checked~.title,
+                #tab6:checked~.title,
+                #tab7:checked~.title,
+                #tab8:checked~.title {
+                    display: block;
+                    margin: 20px 0 -15px 0;
+                }
+
+                #tab1:checked~label span,
+                #tab2:checked~label span,
+                #tab3:checked~label span,
+                #tab4:checked~label span,
+                #tab5:checked~label span,
+                #tab6:checked~label span,
+                #tab7:checked~label span,
+                #tab8:checked~label span {
+                    transform: rotate(90deg);
+                }
+
+
+                input[type=radio] {
+                    display: none;
+                }
+
+                .title {
+                    display: none;
+                    background-color: $whiteColor;
+                    @include wh(100%, 100%);
+                    padding: 10px;
+
+                    .title-inside {
+
+                        @include flex(row, center, flex-start);
+                        @include wh(100%, 100%);
+
+                        .img {
+                            @include wh(30%, 100%);
+                        }
+
+                        .text {
+                            @include wh(100%, 100%);
+                            @include flex(column, center, flex-start);
+
+                            span {
+                                margin: 3px 0;
+                                @include font-family('Roboto', 16px, $grayColor, none, lighter);
+                            }
+
+                            .text__graduate {
+                                font-size: 12px;
+                            }
+
+                            p {
+                                line-height: 25px;
+                                @include font-family('Roboto', 14px, $grayColor, none, lighter);
+
+                            }
+                        }
+                    }
+                }
+
+                label {
+                    @include font-family('Roboto', 16px, $whiteColor, none, lighter);
+                    background-color: $faqsColor;
+                    cursor: pointer;
+                    @include wh(100%, 100%);
+                    padding: 15px 200px 15px 0;
+
+                    span {
+                        font-size: 25px;
+                        margin: 0 10px 0 10px;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+
+        .faqs-slider {
+            padding: 50px 0;
+            @include wh(100%, 100%);
+            position: relative;
+
+            .faqs__dots {
+                @include flex(row, center, center);
+                @include pos-left(0%, 70%);
+
+                & button {
+                    font-size: 0px;
+                    @include wh(25px, 25px);
+                    border: 2px solid $orangeColor;
+                    border-radius: 50%;
+                    background-color: $whiteColor;
+                    margin: 10px 5px;
+                    cursor: pointer;
+                }
+
+                & li[class=slick-active] button {
+                    background: $orangeColor;
+                }
+            }
+
+            .item {
+                .item__text {
+                    margin: 15px 0;
+
+                    p {
+                        @include font-family('Open Sans', 13px, $grayColor, none);
+                        line-height: 26px;
+                    }
+                }
+
+                .item__btn {
+                    input {
+                        @include font-family('Open Sans', 13px, $whiteColor, none);
+                        padding: 15px 30px;
+                        background-color: $orangeColor;
+                        border: none;
+                        cursor: pointer;
+                    }
+                }
+
+                .item__slider {
+                    .item-inside_slider {
+                        position: relative;
+
+                        .inside-faqs__dots {
+                            @include flex(row, center, center);
+                            @include pos-left(100%, 0%);
+
+                            & button {
+                                font-size: 0;
+                                @include wh(50px, 4px);
+                                background: grey;
+                                border: 1px solid grey;
+                            }
+
+                            & li[class=slick-active] button {
+                                background: $orangeColor;
+                                border: 1px solid $orangeColor;
+                            }
+                        }
+
+                        .items {
+                            .img {
+                                img {
+                                    @include wh(100%, 100%);
+                                }
+                            }
+
+                            .text {
+                                @include font-family('Open Sans', 13px, $grayColor, none);
+
+                                p {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

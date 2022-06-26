@@ -1,0 +1,94 @@
+.content {
+    .main-slider {
+
+        .slider {
+
+            .icon-arrow-left {
+                @include pos-left(50%, 0);
+                @include wh(100px, 104px);
+                @include flex(row, center, center);
+                cursor: pointer;
+                background: red;
+                z-index: 2;
+                color: white;
+                transition: 0.5s;
+
+                &:hover {
+                    background: $orangeColor;
+                }
+
+               /*  &::after {
+                    content: url('../icons/slider-girl.png');
+                    @include pos-left(0, 100%);
+                } */
+            }
+
+            .icon-arrow-right {
+                @include pos-right(50%, 0);
+                @include flex(row, center, center);
+                @include wh(100px, 104px);
+                background: rgba(0, 0, 0, 0.733);
+                color: white;
+                cursor: pointer;
+                transition: 0.5s;
+
+                &:hover {
+                    background: $orangeColor;
+                }
+
+               /*  &::after {
+                    content: url('../icons/slider-girl.png');
+                    @include pos-right(0, 100%);
+                } */
+            }
+
+            .item {
+                @include wh(100%, 100vh);
+                @include flex(column, center, center);
+                position: relative;
+
+                .picture {
+                    @include wh(100%, 100%);
+
+                    img {
+                        @include wh(100%, 100%);
+
+                    }
+                }
+
+                .container {
+                    position: absolute;
+
+                    .text {
+                        @include flex(column, flex-start, flex-start);
+
+                        span:nth-child(1) {
+                            @include font-family('Open Sans', 65px, $orangeColor, uppercase, bold);
+                        }
+
+                        span:nth-child(2) {
+                            @include font-family('Open Sans', 65px, $whiteColor, uppercase);
+                        }
+
+                        p {
+                            @include font-family('Open Sans', 22px, $whiteColor, none);
+                            line-height: 31px;
+                            margin: 20px 0;
+
+                        }
+
+                        input[type='submit'] {
+                            @include wh(100px, 40px);
+                            @include font-family('Open Sans', 14px, $whiteColor, none);
+                            background-color: $orangeColor;
+                            cursor: pointer;
+                            border: none;
+                            margin: 20px 0;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

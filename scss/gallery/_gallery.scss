@@ -1,0 +1,170 @@
+.gallery {
+    padding: 100px 0;
+    height: 1045px;
+    .container {
+        .gallery-inside {
+            @include flex(column, center, center);
+
+            .gallery-inside__caption {
+                margin-top: 100px;
+
+                h2 {
+                    @include font-family('Roboto Slab', 60px, $grayColor, uppercase, bold);
+                }
+            }
+
+            .gallery-inside__btn {
+                @include wh(100%, 100%);
+                text-align: center;
+
+                input[type=radio] {
+                    display: none;
+                }
+
+                .input-btn1:checked~.btn-inside__title .label-btn1 {
+                    background-color: $orangeColor;
+                    color: white;
+                    border: 1px solid $orangeColor;
+                }
+
+                .input-btn2:checked~.btn-inside__title .label-btn2 {
+                    background-color: $orangeColor;
+                    color: white;
+                    border: 1px solid $orangeColor;
+                }
+
+                .input-btn3:checked~.btn-inside__title .label-btn3 {
+                    background-color: $orangeColor;
+                    color: white;
+                    border: 1px solid $orangeColor;
+                }
+
+                .input-btn4:checked~.btn-inside__title .label-btn4 {
+                    background-color: $orangeColor;
+                    color: white;
+                    border: 1px solid $orangeColor;
+                }
+
+                .input-btn5:checked~.btn-inside__title .label-btn5 {
+                    background-color: $orangeColor;
+                    color: white;
+                    border: 1px solid $orangeColor;
+                }
+
+                .input-btn1:checked~.btn-inside__img .btn-inside__img_item1 {
+                    display: block;
+                }
+
+                .input-btn2:checked~.btn-inside__img .btn-inside__img_item2 {
+                    display: block;
+
+
+                }
+
+                .input-btn3:checked~.btn-inside__img .btn-inside__img_item3 {
+                    display: block;
+
+                }
+
+                .input-btn4:checked~.btn-inside__img .btn-inside__img_item4 {
+                    display: block;
+
+                }
+
+                .input-btn5:checked~.btn-inside__img .btn-inside__img_item5 {
+                    display: block;
+                }
+
+
+                .btn-inside__title {
+                    padding: 50px 0;
+
+                    label {
+                        @include font-family('Roboto', 16px, $grayColor, uppercase, lighter);
+                        line-height: 32px;
+                        padding: 10px 15px;
+                        margin: 0 5px;
+                        border: 1px solid $grayColor;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: $orangeColor;
+                            color: $whiteColor;
+                            border: 1px solid $orangeColor;
+                        }
+
+                    }
+                }
+
+                .btn-inside__img {
+
+                    .btn-inside__img_item1,
+                    .btn-inside__img_item2,
+                    .btn-inside__img_item3,
+                    .btn-inside__img_item4,
+                    .btn-inside__img_item5 {
+                        display: none;
+
+                        .inside-item {
+                            @include flex(row, center, center);
+                            flex-wrap: wrap;
+                            @include wh(100%, 100%);
+
+
+                            .item {
+                                position: relative;
+
+                                .another-item {
+                                    @include wh(280px, 250px);
+                                    margin: -3px;
+                                    background: rgba(0, 0, 0, 0.712);
+                                    @include pos-left(0, 0);
+                                    visibility: hidden;
+                                    @include flex(row, center, center);
+
+                                    input[type=checkbox] {
+                                        display: none;
+                                    }
+
+                                    .labron-btn1:checked~.labron1 span {
+                                        background-color: $orangeColor;
+                                        border: 1px solid $orangeColor;
+                                    }
+                                    .labron-btn2:checked~.labron2 span {
+                                        background-color: $orangeColor;
+                                        border: 1px solid $orangeColor;
+                                    }
+                                    .labron-btn3:checked~.labron3 span {
+                                        background-color: $orangeColor;
+                                        border: 1px solid $orangeColor;
+                                    }
+
+                                    label {
+                                        span {
+                                            cursor: pointer;
+                                            font-size: 35px;
+                                            margin: 0 5px;
+                                            color: $whiteColor;
+                                            padding: 8px;
+                                            border: 1px solid $whiteColor;
+                                        }
+                                    }
+                                }
+
+                                &:hover .another-item {
+                                    visibility: visible;
+                                }
+
+                                img {
+                                    @include wh(280px, 250px);
+                                    margin: -3px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

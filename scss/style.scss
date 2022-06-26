@@ -1,0 +1,29 @@
+/* ----------HTML---------- */
+
+@import 'mixins';
+@import 'varibales';
+@import 'reset';
+
+/* ----------BODY---------- */
+
+@import 'header/header';
+@import 'header/header-media';
+@import 'content/content';
+@import 'content/content-media';
+@import 'about/about';
+@import 'about/about-media';
+@import 'courses/courses';
+@import 'courses/courses-media';
+@import 'gallery/gallery';
+@import 'gallery/gallery-media';
+@import 'video/video';
+@import 'video/video-media';
+@import 'teachers/teachers';
+@import 'teachers/teachers-media';
+@import 'campus/campus';
+@import 'campus/campus-media';
+@import 'faqs/faqs';
+@import 'faqs/faqs-media';
+@import 'footer/footer';
+@import 'footer/footer-media';
+@import 'footer-bottom/footer-botton';

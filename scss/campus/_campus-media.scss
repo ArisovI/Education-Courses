@@ -1,0 +1,131 @@
+@media (min-width: 768px) {
+    .campus {
+        padding: 80px 10px;
+        background-color: $campusColor;
+        .caption{
+            @include font-family('Roboto slab', 45px, $grayColor, uppercase, bold);
+            text-align: center;
+        }
+        .campus-slider {
+            padding: 80px 0 0 0;
+            .item {
+                position: relative;
+                overflow: hidden;
+    
+                img {
+                    @include wh(100%, 100%);
+                }
+    
+                .right::before {
+                    content: '';
+                    @include wh(50%, 50%);
+                    @include pos-right(50%, -1%);
+                    opacity: 0;
+                    background-color: rgba(19, 18, 18, 0.836);
+                }
+    
+                .left::after {
+                    content: '';
+                    @include pos-left(-1%, 0);
+                    @include wh(50%, 50%);
+                    opacity: 0;
+                    background-color: rgba(19, 18, 18, 0.836);
+                }
+    
+                .left::before {
+                    content: '';
+                    @include pos-left(50%, 0);
+                    @include wh(50%, 50%);
+                    opacity: 0;
+                    background-color: rgba(19, 18, 18, 0.836);
+    
+                }
+    
+                .right::after {
+                    content: '';
+                    @include wh(50%, 50%);
+                    @include pos-right(-1%, -1%);
+                    background-color: rgba(19, 18, 18, 0.836);
+                    opacity: 0;
+                }
+                &:hover .right::before, &:hover .right::after, &:hover .left::after, &:hover .left::before{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 992px) {
+    .campus {
+        padding: 100px 10px;
+        background-color: $campusColor;
+        .caption{
+            @include font-family('Roboto slab', 60px, $grayColor, uppercase, bold);
+            text-align: center;
+        }
+        .campus-slider {
+            padding: 100px 0 0 0;
+
+            .campus-dots {
+                @include flex(row, center, center);
+                @include pos-right(-0px, 45%);
+
+                & button {
+                    font-size: 0;
+                    @include wh(50px, 4px);
+                    background: grey;
+                    border: 1px solid grey;
+                }
+                & li[class=slick-active] button{
+                    background: $orangeColor;
+                    border: 1px solid $orangeColor;
+                }
+            }
+
+            .item {
+                position: relative;
+                overflow: hidden;
+    
+                img {
+                    @include wh(100%, 100%);
+                }
+    
+                .right::before {
+                    content: '';
+                    @include wh(50%, 50%);
+                    @include pos-right(50%, -1%);
+                    opacity: 0;
+                    background-color: rgba(19, 18, 18, 0.836);
+                }
+    
+                .left::after {
+                    content: '';
+                    @include pos-left(-1%, 0);
+                    @include wh(50%, 50%);
+                    opacity: 0;
+                    background-color: rgba(19, 18, 18, 0.836);
+                }
+    
+                .left::before {
+                    content: '';
+                    @include pos-left(50%, 0);
+                    @include wh(50%, 50%);
+                    opacity: 0;
+                    background-color: rgba(19, 18, 18, 0.836);
+    
+                }
+    
+                .right::after {
+                    content: '';
+                    @include wh(50%, 50%);
+                    @include pos-right(-1%, -1%);
+                    background-color: rgba(19, 18, 18, 0.836);
+                    opacity: 0;
+                }
+                &:hover .right::before, &:hover .right::after, &:hover .left::after, &:hover .left::before{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

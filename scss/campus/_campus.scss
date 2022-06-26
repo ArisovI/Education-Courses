@@ -1,0 +1,56 @@
+.campus {
+    padding: 50px 10px;
+    background-color: $campusColor;
+    .caption{
+        @include font-family('Roboto slab', 30px, $grayColor, uppercase, bold);
+        text-align: center;
+    }
+    .campus-slider {
+        padding: 50px 0 0 0;
+        .item {
+            position: relative;
+            overflow: hidden;
+            margin: 0 5px;
+
+            img {
+                @include wh(100%, 100%);
+            }
+
+            .right::before {
+                content: '';
+                @include wh(50%, 50%);
+                @include pos-right(50%, -1%);
+                opacity: 0;
+                background-color: rgba(19, 18, 18, 0.836);
+            }
+
+            .left::after {
+                content: '';
+                @include pos-left(-1%, 0);
+                @include wh(50%, 50%);
+                opacity: 0;
+                background-color: rgba(19, 18, 18, 0.836);
+            }
+
+            .left::before {
+                content: '';
+                @include pos-left(50%, 0);
+                @include wh(50%, 50%);
+                opacity: 0;
+                background-color: rgba(19, 18, 18, 0.836);
+
+            }
+
+            .right::after {
+                content: '';
+                @include wh(50%, 50%);
+                @include pos-right(-1%, -1%);
+                background-color: rgba(19, 18, 18, 0.836);
+                opacity: 0;
+            }
+            &:hover .right::before, &:hover .right::after, &:hover .left::after, &:hover .left::before{
+                opacity: 1;
+            }
+        }
+    }
+}

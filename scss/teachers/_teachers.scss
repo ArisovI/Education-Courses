@@ -1,0 +1,106 @@
+.teachers {
+    padding: 50px 0 0 0;
+
+    .teachers-caption {
+        text-align: center;
+        padding: 0 0 50px 0;
+        @include font-family('Roboto Slab', 30px, $grayColor, uppercase, bold);
+    }
+
+    .main-slider {
+        .slider-teachers {
+            .item {
+                @include wh(100%, 100%);
+                @include flex(column, center, center);
+                position: relative;
+
+                img {
+                    @include wh(100%, 100%);
+                }
+
+
+                .item__inside {
+                    @include pos-left(auto, 0);
+                    bottom: -100%;
+                    @include wh(100%, 60%);
+                    background: rgba(167, 101, 1, 0.685);
+                    @include flex(column, center, center);
+                    transition: 1s;
+
+                    span {
+                        @include font-family('Open sans', 26px, $whiteColor, none);
+                    }
+
+                    p {
+                        @include font-family('Open sans', 16px, $whiteColor, none);
+
+                    }
+
+                    .btn {
+                        @include flex(row, center, center);
+                        margin-top: 20px;
+
+                        input {
+                            display: none;
+                        }
+
+                        span {
+                            margin: 0 5px;
+                            padding: 8px;
+                            border: 1px solid $whiteColor;
+                            background-color: transparent;
+                            border-radius: 5px;
+                            cursor: pointer;
+                        }
+
+                        .btn1:checked~.btn-for1 span {
+                            background-color: $whiteColor;
+                            color: rgba(167, 101, 1, 0.685);
+                        }
+
+                        .btn2:checked~.btn-for2 span {
+                            background-color: $whiteColor;
+                            color: rgba(167, 101, 1, 0.685);
+                        }
+
+                        .btn3:checked~.btn-for3 span {
+                            background-color: $whiteColor;
+                            color: rgba(167, 101, 1, 0.685);
+                        }
+
+                        .btn4:checked~.btn-for4 span {
+                            background-color: $whiteColor;
+                            color: rgba(167, 101, 1, 0.685);
+                        }
+
+
+
+
+                    }
+
+                }
+
+                &:hover .item__inside {
+                    bottom: 0;
+                }
+            }
+
+            .dots-teachers {
+                @include flex(row, center, center);
+                @include pos-left(-80px, 43%);
+
+                & button {
+                    font-size: 0;
+                    @include wh(50px, 4px);
+                    background: grey;
+                    border: 1px solid grey;
+                }
+
+                & li[class=slick-active] button {
+                    background: $orangeColor;
+                    border: 1px solid $orangeColor;
+                }
+            }
+        }
+    }
+}

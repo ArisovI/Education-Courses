@@ -1,0 +1,155 @@
+.courses {
+    @include wh(100%, 865px);
+    background-image: url('../imgs/back-girl.png');
+    padding: 100px 0;
+
+    .container {
+        .courses-inside {
+            .courses-inside__caption {
+                @include flex(column, center, center);
+                margin: 50px 0 100px 0;
+
+                h2 {
+                    @include font-family('Roboto Slab', 50px, $grayColor, uppercase, bold);
+                }
+            }
+        }
+
+        .courses-inside__slider {
+            .slider-courses {
+                .dots {
+                    @include flex(row, center, center);
+                    @include pos-right(-80px, 45%);
+
+                    & button {
+                        font-size: 0;
+                        @include wh(50px, 4px);
+                        background: grey;
+                        border: 1px solid grey;
+                    }
+                    & li[class=slick-active] button{
+                        background: $orangeColor;
+                        border: 1px solid $orangeColor;
+                    }
+                }
+
+                .item {
+                    margin: 5px 15px;
+                    box-shadow: 2px 2px 10px $blackColor;
+                    @include flex(column, center, center);
+
+                    .item__picture {
+                        @include wh(100%, 100%);
+                        position: relative;
+
+                        .icon-search{
+                            font-size: 100px;
+                            @include pos-right(30%, 35%);
+                            opacity: 0;
+                            transition: 0.5s;
+                        }
+
+                        &:hover .icon-search{
+                            opacity: 1;
+                        }
+
+                        &:hover img{
+                            opacity: 0.3;
+                        }
+
+                        img {
+                            @include wh(100%, 100%);
+                            transition: 0.5s;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .item__text {
+                        @include flex(column, center, center);
+                        background: $whiteColor;
+                        padding: 15px;
+
+                        span {
+                            @include font-family('Open Sans', 22px, $blackColor, none);
+                        }
+
+                        .stars {
+                            @include flex(row, space-between, center);
+                            @include wh(100%, 100%);
+
+                            p {
+                                @include font-family('Open sans', 16px, $grayColor, none);
+                                @include flex(row, center, center);
+
+                                span {
+                                    margin-right: 5px;
+                                }
+                            }
+
+                            .stars-btn {
+                                float: left;
+                                height: 46px;
+                            }
+
+                            .stars-btn:not(:checked)>input {
+                                position: absolute;
+                                top: -9999px;
+                            }
+
+                            .stars-btn:not(:checked)>label {
+                                float: right;
+                                width: 1em;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                cursor: pointer;
+                                font-size: 30px;
+                                color: $grayColor;
+                            }
+
+                            .stars-btn:not(:checked)>label::before {
+                                content: '★ ';
+                            }
+
+                            .stars-btn>input:checked~label {
+                                color: #ffc700;
+                            }
+
+                            .stars-btn:not(:checked)>label:hover,
+                            .stars-btn:not(:checked)>label:hover~label {
+                                color: #ffc700;
+                            }
+
+                            .stars-btn>input:checked+label:hover,
+                            .stars-btn>input:checked+label:hover~label,
+                            .stars-btn>input:checked~label:hover,
+                            .stars-btn>input:checked~label:hover~label,
+                            .stars-btn>label:hover~input:checked~label {
+                                color: #ffc700;
+                            }
+                        }
+
+                        .btn {
+                            @include flex(row, space-between, center);
+                            @include wh(100%, auto);
+
+                            input:nth-child(1) {
+                                background: $orangeColor;
+                                color: white;
+                            }
+
+                            input {
+                                border: 1px solid $orangeColor;
+                                box-shadow: 0 0 2px $blackColor;
+                                cursor: pointer;
+                                @include wh(120px, 50px);
+                                border-radius: 6px;
+                                background: $whiteColor;
+                                @include font-family('Roboto', 22px, $orangeColor, uppercase, bold);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

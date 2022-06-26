@@ -1,0 +1,123 @@
+.about{
+   padding: 50px 0;
+   margin-top: 100px;
+    .container{
+        .about-us{
+            .caption{
+                @include flex(column, center, center);
+                margin-bottom: 100px;
+                h2{
+                    line-height: 32px;
+                    @include font-family('Roboto Slab', 60px, $grayColor, uppercase, bold);
+                 }
+            }
+            .slider-about{
+                .dots{
+                    @include flex(row, center, center);
+                    @include pos-left(-80px, 43%);
+
+                    & button{
+                        @include wh(50px, 4px);
+                        font-size: 0;
+                        background: grey;
+                        border: 1px solid grey;
+                        cursor: pointer;
+                    }
+
+                }
+                .dots li[class="slick-active"] button{
+                    background: $orangeColor;
+                    border: 1px solid $orangeColor;
+
+                }
+
+                
+                .item{
+                    padding: 10px;
+                    cursor: pointer;
+                    position: relative;
+                    margin: 0 10px;
+                    @include flex(column, center, center);
+
+
+                    .icon{
+                        border: 2px solid $grayColor;
+                        padding: 10px;
+                        @include wh(100px, 100px);
+                        @include flex(column, center, center);
+                        border-radius: 50%;
+                        margin: 10px 0;
+                    }
+                    .text{
+                        @include flex(column, center, center);
+                        text-align: center;
+                        span{
+                            line-height: 32px;
+                            @include font-family('Open Sans', 18px, $grayColor, uppercase, bold);
+                        }
+                        p{
+                            @include font-family('Open Sans', 14px, $grayColor, none, lighter);
+                            line-height: 24px;
+                        }
+                    }
+                    .top::after{
+                        content: '';
+                        @include wh(0px, 1px);
+                        @include pos-left(0,50%);
+                        background-color: rgb(209, 200, 200);
+                        transition: 1s;
+                    }
+                    .top::before{
+                        content: '';
+                        @include wh(0px, 1px);
+                        @include pos-left(99%,50%);
+                        background-color: rgb(209, 200, 200);
+
+                        transition: 1s;
+                    }
+                    &:hover .top::after{
+                        @include wh(100%, 1px);
+                        @include pos-left(0,0);
+                    }
+                    &:hover  .top::before{
+                        @include wh(100%, 1px);
+                        @include pos-left(99%,0);
+                    }
+                    .left::after{
+                        content: '';
+                        @include wh(1px, 0px);
+                        @include pos-right(50%, 0);
+                        background-color: rgb(209, 200, 200);
+
+                        transition: 1s;
+                    }
+                    .left::before{
+                        content: '';
+                        @include wh(1px, 0px);
+                        @include pos-left(50%, 0);
+                        background-color: rgb(209, 200, 200);
+
+                        transition: 1s;
+                    }
+                    &:hover .left::after{
+                        @include wh(1px, 99%);
+                        @include pos-right(0, 0);
+                    }
+                    &:hover .left::before{
+                        @include wh(1px, 99%);
+                        @include pos-left(0, 0);
+                    }
+                    &:hover .text p{
+                        color: $orangeColor;
+                    }
+                    &:hover .text span{
+                        color: $orangeColor;
+                    }
+                    &:hover .icon{
+                        border: 2px solid $orangeColor;
+                    }
+                }
+            }
+        }
+    }
+}
